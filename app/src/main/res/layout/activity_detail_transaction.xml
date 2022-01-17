@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detailTransactionAct">
+
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="match_parent"
+        android:layout_height="426dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_expense" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bottom_sheet_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7">
+
+        <TextView
+            android:id="@+id/tvTransactionDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito"
+            android:text="Transaction Detail"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCategoryDet"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_transaction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvCategoryDet" />
+
+        <TextView
+            android:id="@+id/tvCategoryDet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito"
+            android:text="Shopping"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@id/ivCategoryDet"
+            app:layout_constraintTop_toBottomOf="@id/tvTransactionDetail" />
+
+        <TextView
+            android:id="@+id/tvAmountDet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito"
+            android:text="Rp150.000"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            app:layout_constraintStart_toEndOf="@id/ivCategoryDet"
+            app:layout_constraintTop_toBottomOf="@id/tvCategoryDet" />
+
+        <ImageView
+            android:id="@+id/ivCalendarDet"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_calendar_3"
+            app:layout_constraintEnd_toEndOf="@+id/ivCategoryDet"
+            app:layout_constraintStart_toStartOf="@+id/ivCategoryDet"
+            app:layout_constraintTop_toBottomOf="@id/tvAmountDet" />
+
+        <TextView
+            android:id="@+id/tvDateDet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/nunito"
+            android:text="17 Jan 2021"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCalendarDet"
+            app:layout_constraintStart_toEndOf="@+id/ivCalendarDet"
+            app:layout_constraintTop_toTopOf="@+id/ivCalendarDet" />
+
+        <ImageView
+            android:id="@+id/ivNoteDet"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_notes"
+            app:layout_constraintEnd_toEndOf="@+id/ivCategoryDet"
+            app:layout_constraintStart_toStartOf="@+id/ivCategoryDet"
+            app:layout_constraintTop_toBottomOf="@id/ivCalendarDet" />
+
+        <TextView
+            android:id="@+id/tvNoteDet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/nunito"
+            android:text="additional notes"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivNoteDet"
+            app:layout_constraintStart_toEndOf="@+id/ivNoteDet"
+            app:layout_constraintTop_toTopOf="@+id/ivNoteDet" />
+
+        <Button
+            android:id="@+id/editDetBtn"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="152dp"
+            android:background="@drawable/rectangle_35"
+            android:fontFamily="@font/nunito"
+            android:text="Edit"
+            app:backgroundTint="#95D1CC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateDet" />
+
+        <Button
+            android:id="@+id/deleteDetBtn"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rectangle_ourline_35"
+            android:fontFamily="@font/nunito"
+            android:text="Delete"
+            android:textColor="#000000"
+            app:backgroundTint="#A13333"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editDetBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

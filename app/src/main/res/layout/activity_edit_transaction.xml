@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editTransactionAct">
+
+    <TextView
+        android:id="@+id/tvEditTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/nunito"
+        android:text="Edit Transaction"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTD1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Transaction Date: "
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditTransaction" />
+
+    <TextView
+        android:id="@+id/tvTransactionDateEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="dd-Mon-YYYY"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/tvTD1"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditTransaction" />
+
+    <ImageView
+        android:id="@+id/ivCalendarEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTransactionDateEdit"
+        app:layout_constraintStart_toEndOf="@+id/tvTransactionDateEdit"
+        app:layout_constraintTop_toTopOf="@+id/tvTransactionDateEdit"
+        app:srcCompat="@drawable/ic_calendar" />
+
+    <!--    var type: String,-->
+    <RadioGroup
+        android:id="@+id/rgTypeEdit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/colorborder"
+        android:gravity="left"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTD1">
+
+        <RadioButton
+            android:id="@+id/rbIncomeEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/nunito"
+            android:text="Income" />
+
+        <RadioButton
+            android:id="@+id/rbExpenseEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/nunito"
+            android:text="Expense" />
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfAmountEdit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgTypeEdit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAmountEdit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/colorborder"
+            android:fontFamily="@font/nunito"
+            android:hint="Amount"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfCategoryEdit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tfAmountEdit">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdownCategoryItemEdit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/colorborder"
+            android:fontFamily="@font/nunito"
+            android:inputType="none"
+            android:text="-- Not Selected --"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfNoteEdit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tfCategoryEdit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNoteEdit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/colorborder"
+            android:fontFamily="@font/nunito"
+            android:hint="Additional Notes" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/saveChangesBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/rectangle_35"
+        android:fontFamily="@font/nunito"
+        android:text="Save Changes"
+        app:backgroundTint="#95D1CC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfNoteEdit" />
+
+    <Button
+        android:id="@+id/deleteTransactionEditBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rectangle_ourline_35"
+        android:fontFamily="@font/nunito"
+        android:text="Delete Transaction"
+        android:textColor="#000000"
+        app:backgroundTint="#A13333"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveChangesBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

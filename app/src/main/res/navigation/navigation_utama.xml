@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_utama"
+    app:startDestination="@id/transactionFr2">
+
+    <fragment
+        android:id="@+id/transactionFr2"
+        android:name="com.example.uas_c14190099.transactionFr"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_transactionFr2_to_reportFr"
+            app:destination="@id/reportFr" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportFr"
+        android:name="com.example.uas_c14190099.reportFr"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" />
+</navigation>
